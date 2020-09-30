@@ -1,10 +1,10 @@
-﻿namespace PromotionEngine.Services
-{
-    public class OrderServices
-    {
-        public OrderServices()
-        {
+﻿using PromotionEngine.Services.Interfaces;
 
-        }
+namespace PromotionEngine.Services
+{
+    public class OrderServices : IOrderServices
+    {
+
+
     }
 }

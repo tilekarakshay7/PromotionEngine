@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Services\Interfaces\IItemServices.cs" />
     <Compile Include="Services\Interfaces\IPromotionRuleServices.cs" />
+    <Compile Include="Services\Interfaces\IOrderServices.cs" />
     <Compile Include="Services\ItemServices.cs" />
     <Compile Include="Services\OrderServices.cs" />
     <Compile Include="Services\PromotionRuleServices.cs" />
