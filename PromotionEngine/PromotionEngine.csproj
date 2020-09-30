@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Actions\ItemServices.cs" />
     <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
