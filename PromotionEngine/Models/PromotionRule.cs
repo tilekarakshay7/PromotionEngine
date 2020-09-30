@@ -18,6 +18,9 @@ namespace PromotionEngine.Models
 
         public int LumsumAmountToReduceFromPrice { get; set; }
 
+        /// <summary>
+        /// Ex : C + D have combine rule, in case of promotion rule C, it contains "D"
+        /// </summary>
         public List<char> ListOfAnotherItemsToBeConsidered { get; set; }
     }
 }

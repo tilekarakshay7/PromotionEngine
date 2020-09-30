@@ -8,13 +8,14 @@ namespace PromotionEngine.Services
 {
     public class PromotionRuleServices : IPromotionRuleServices
     {
+        // in actual case, we fetch from DB
         public List<PromotionRule> GetPromotionRules()
         {
             List<PromotionRule> PromotionRules = new List<PromotionRule>()
             {
                 new PromotionRule
                 {
-                    RuleName = "Rule_A",
+                    RuleName = "3_A_For_130 ",
                     SKUId = Constants.A,
                     NumberOfApperance = 3 ,
                     LumsumAmountToReduceFromPrice = 20,
@@ -22,7 +23,7 @@ namespace PromotionEngine.Services
                 },
                 new PromotionRule
                 {
-                    RuleName = "Rule_B",
+                    RuleName = "2_B_For_45",
                     SKUId = Constants.B,
                     NumberOfApperance = 2 ,
                     LumsumAmountToReduceFromPrice = 15,
@@ -30,7 +31,7 @@ namespace PromotionEngine.Services
                 },
                 new PromotionRule
                 {
-                    RuleName = "Rule_C",
+                    RuleName = "C_&_D_For_30",
                     SKUId = Constants.C,
                     NumberOfApperance = 1,
                     LumsumAmountToReduceFromPrice = 5,
