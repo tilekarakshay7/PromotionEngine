@@ -4,7 +4,7 @@ namespace PromotionEngine.Models
 {
     public class PromotionRule
     {
-        public string SKUId { get; set; }
+        public char SKUId { get; set; }
 
         public string RuleName { get; set; }
 
