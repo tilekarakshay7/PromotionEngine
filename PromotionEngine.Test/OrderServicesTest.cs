@@ -261,5 +261,175 @@ namespace PromotionEngine.Test
 
         }
 
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_PDFScenarioA()
+        {
+            // A B C = 100
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.A,1),
+                new Cart(Constants.B,1),
+                new Cart(Constants.C,1)
+            };
+
+            var promotionRule = new PromotionRule
+            {
+                RuleName = "Rule_C",
+                SKUId = Constants.C,
+                NumberOfApperance = 1,
+                LumsumAmountToReduceFromPrice = 5,
+                PercentageToReduceFromPrice = 0,
+                ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+            };
+
+            var itemA = new Item() { SKUId = Constants.A, Name = "A Name", Price = 50 };
+            var itemB = new Item() { SKUId = Constants.B, Name = "B Name", Price = 30 };
+            var itemC = new Item() { SKUId = Constants.C, Name = "C Name", Price = 20 };
+            var itemD = new Item() { SKUId = Constants.D, Name = "D Name", Price = 15 };
+
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.C)).Returns(promotionRule);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.A)).Returns(itemA);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.B)).Returns(itemB);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.C)).Returns(itemC);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.D)).Returns(itemD);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 100);
+
+        }
+
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_PDFScenarioB()
+        {
+            // 5A 5B 1C = 370
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.A,5),
+                new Cart(Constants.B,5),
+                new Cart(Constants.C,1)
+            };
+
+            var prA = new PromotionRule
+            {
+                RuleName = "Rule_A",
+                SKUId = Constants.A,
+                NumberOfApperance = 3,
+                LumsumAmountToReduceFromPrice = 20,
+                PercentageToReduceFromPrice = 0
+            };
+            var prB = new PromotionRule
+            {
+                RuleName = "Rule_B",
+                SKUId = Constants.B,
+                NumberOfApperance = 2,
+                LumsumAmountToReduceFromPrice = 15,
+                PercentageToReduceFromPrice = 0
+            };
+
+            var prC = new PromotionRule
+            {
+                RuleName = "Rule_C",
+                SKUId = Constants.C,
+                NumberOfApperance = 1,
+                LumsumAmountToReduceFromPrice = 5,
+                PercentageToReduceFromPrice = 0,
+                ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+            };
+
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.A)).Returns(prA);
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.B)).Returns(prB);
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.C)).Returns(prC);
+
+            var itemA = new Item() { SKUId = Constants.A, Name = "A Name", Price = 50 };
+            var itemB = new Item() { SKUId = Constants.B, Name = "B Name", Price = 30 };
+            var itemC = new Item() { SKUId = Constants.C, Name = "C Name", Price = 20 };
+            var itemD = new Item() { SKUId = Constants.D, Name = "D Name", Price = 15 };
+
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.A)).Returns(itemA);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.B)).Returns(itemB);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.C)).Returns(itemC);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.D)).Returns(itemD);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 370);
+
+        }
+
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_PDFScenarioC()
+        {
+            // 3A B5 1C 1d = 280
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.A,3),
+                new Cart(Constants.B,5),
+                new Cart(Constants.C,1),
+                new Cart(Constants.D,1)
+            };
+
+            var prA = new PromotionRule
+            {
+                RuleName = "Rule_A",
+                SKUId = Constants.A,
+                NumberOfApperance = 3,
+                LumsumAmountToReduceFromPrice = 20,
+                PercentageToReduceFromPrice = 0
+            };
+            var prB = new PromotionRule
+            {
+                RuleName = "Rule_B",
+                SKUId = Constants.B,
+                NumberOfApperance = 2,
+                LumsumAmountToReduceFromPrice = 15,
+                PercentageToReduceFromPrice = 0
+            };
+
+            var prC = new PromotionRule
+            {
+                RuleName = "Rule_C",
+                SKUId = Constants.C,
+                NumberOfApperance = 1,
+                LumsumAmountToReduceFromPrice = 5,
+                PercentageToReduceFromPrice = 0,
+                ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+            };
+
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.A)).Returns(prA);
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.B)).Returns(prB);
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.C)).Returns(prC);
+
+            var itemA = new Item() { SKUId = Constants.A, Name = "A Name", Price = 50 };
+            var itemB = new Item() { SKUId = Constants.B, Name = "B Name", Price = 30 };
+            var itemC = new Item() { SKUId = Constants.C, Name = "C Name", Price = 20 };
+            var itemD = new Item() { SKUId = Constants.D, Name = "D Name", Price = 15 };
+
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.A)).Returns(itemA);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.B)).Returns(itemB);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.C)).Returns(itemC);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.D)).Returns(itemD);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 280);
+
+        }
+
     }
 }

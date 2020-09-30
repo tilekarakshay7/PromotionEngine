@@ -51,10 +51,11 @@ namespace PromotionEngine.Services
 
             while (promoRule.NumberOfApperance <= cart.CountOfRemainingItemsForPromo && cart.CountOfRemainingItemsForPromo != 0)
             {
+                var IsOtherItemExistInCart = true;
                 foreach (var otherItem in promoRule.ListOfAnotherItemsToBeConsidered)
                 {
                     var anotherItem = itemServices.GetItemBySkuId(otherItem);
-                    var IsOtherItemExistInCart = carts.Any(x => x.SKUId == anotherItem.SKUId);
+                    IsOtherItemExistInCart = carts.Any(x => x.SKUId == anotherItem.SKUId);
                     if (IsOtherItemExistInCart)
                     {
                         price += anotherItem.Price;
@@ -62,7 +63,11 @@ namespace PromotionEngine.Services
                         cartItem.CountOfRemainingItemsForPromo = cartItem.CountOfRemainingItemsForPromo - promoRule.NumberOfApperance;
                     }
                 }
-                price += item.Price * promoRule.NumberOfApperance - promoRule.LumsumAmountToReduceFromPrice;
+                if (IsOtherItemExistInCart)
+                    price += item.Price * promoRule.NumberOfApperance - promoRule.LumsumAmountToReduceFromPrice;
+                else
+                    price += item.Price * cart.CountOfRemainingItemsForPromo;
+
                 cart.CountOfRemainingItemsForPromo = cart.CountOfRemainingItemsForPromo - promoRule.NumberOfApperance;
             }
 
