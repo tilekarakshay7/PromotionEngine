@@ -22,3 +22,6 @@ C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.csproj.CopyComplete
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.pdb
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.pdb
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe.config
