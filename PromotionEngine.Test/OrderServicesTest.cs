@@ -55,8 +55,10 @@ namespace PromotionEngine.Test
         }
 
         [TestMethod]
-        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice()
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_Scenario1()
         {
+            // 3 A : final total cost : 150 - 30 = 120
+
             //Arrange
             var carts = new List<Cart>()
             {
@@ -82,6 +84,39 @@ namespace PromotionEngine.Test
 
             //Assert
             Assert.AreEqual(totalPrice, 130);
+
+        }
+
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_Scenario2()
+        {
+            // 4 A : final total cost : (150 - 30) + 50 = 180
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.A,  4)
+            };
+
+            var promotionRule = new PromotionRule
+            {
+                RuleName = "Rule_A",
+                SKUId = Constants.A,
+                NumberOfApperance = 3,
+                LumsumAmountToReduceFromPrice = 20,
+                PercentageToReduceFromPrice = 0
+            };
+
+            var item = new Item() { SKUId = Constants.A, Name = "A Name", Price = 50 };
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.A)).Returns(promotionRule);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.A)).Returns(item);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 180);
 
         }
     }

@@ -63,6 +63,11 @@ namespace PromotionEngine.Services
                 cart.CountOfRemainingItemsForPromo = cart.CountOfRemainingItemsForPromo - promoRule.NumberOfApperance;
             }
 
+            if (cart.CountOfRemainingItemsForPromo > 0) // remaining items after promo rule should process with normal cost
+            {
+                price += (item.Price * cart.CountOfRemainingItemsForPromo);
+                cart.CountOfRemainingItemsForPromo = 0;
+            }
             return price;
         }
 
