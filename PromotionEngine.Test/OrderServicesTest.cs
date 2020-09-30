@@ -186,5 +186,80 @@ namespace PromotionEngine.Test
 
         }
 
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_Scenario5()
+        {
+            // C + D : final total cost : (20 + 15)- 5 = 30
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.C,1),
+                new Cart(Constants.D,1)
+            };
+
+            var promotionRule = new PromotionRule
+            {
+                RuleName = "Rule_C",
+                SKUId = Constants.C,
+                NumberOfApperance = 1,
+                LumsumAmountToReduceFromPrice = 5,
+                PercentageToReduceFromPrice = 0,
+                ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+            };
+
+            var itemC = new Item() { SKUId = Constants.C, Name = "C Name", Price = 20 };
+            var itemD = new Item() { SKUId = Constants.D, Name = "D Name", Price = 15 };
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.C)).Returns(promotionRule);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.C)).Returns(itemC);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.D)).Returns(itemD);
+
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 30);
+
+        }
+
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice_Scenario6()
+        {
+            // C + 2D : final total cost :  1 CD = 30 and 1D = 15 -> 45
+
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.C,1),
+                new Cart(Constants.D,2)
+            };
+
+            var promotionRule = new PromotionRule
+            {
+                RuleName = "Rule_C",
+                SKUId = Constants.C,
+                NumberOfApperance = 1,
+                LumsumAmountToReduceFromPrice = 5,
+                PercentageToReduceFromPrice = 0,
+                ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+            };
+
+            var itemC = new Item() { SKUId = Constants.C, Name = "C Name", Price = 20 };
+            var itemD = new Item() { SKUId = Constants.D, Name = "D Name", Price = 15 };
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.C)).Returns(promotionRule);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.C)).Returns(itemC);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.D)).Returns(itemD);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 45);
+
+        }
+
     }
 }

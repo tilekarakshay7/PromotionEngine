@@ -28,6 +28,15 @@ namespace PromotionEngine.Services
                     LumsumAmountToReduceFromPrice = 15,
                     PercentageToReduceFromPrice = 0
                 },
+                new PromotionRule
+                {
+                    RuleName = "Rule_C",
+                    SKUId = Constants.C,
+                    NumberOfApperance = 1,
+                    LumsumAmountToReduceFromPrice = 5,
+                    PercentageToReduceFromPrice = 0,
+                    ListOfAnotherItemsToBeConsidered = new List<char>() { Constants.D }
+                },
             };
             return PromotionRules;
         }

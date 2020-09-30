@@ -21,8 +21,11 @@ namespace PromotionEngine.Services
             var total = 0;
             foreach (var cart in carts)
             {
-                var promoRule = promotionRuleServices.GetPromotionRulesBySKUId(cart.SKUId);
-                total += ApplyPromotionRule(carts, cart, promoRule);
+                if (cart.CountOfRemainingItemsForPromo != 0)
+                {
+                    var promoRule = promotionRuleServices.GetPromotionRulesBySKUId(cart.SKUId);
+                    total += ApplyPromotionRule(carts, cart, promoRule);
+                }
             }
             return total;
         }
@@ -31,7 +34,7 @@ namespace PromotionEngine.Services
         {
             var item = itemServices.GetItemBySkuId(cart.SKUId);
             if (promoRule == null)
-                return cart.TotalCount * item.Price;
+                return cart.CountOfRemainingItemsForPromo * item.Price; // "CountOfRemainingItemsForPromo" test case Scenario6
 
             if (promoRule.LumsumAmountToReduceFromPrice > 0)
             {
