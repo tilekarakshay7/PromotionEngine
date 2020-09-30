@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\ItemServices.cs" />
-    <Compile Include="Actions\PromotionRuleServices.cs" />
+    <Compile Include="Services\Interfaces\IItemServices.cs" />
+    <Compile Include="Services\Interfaces\IPromotionRuleServices.cs" />
+    <Compile Include="Services\ItemServices.cs" />
+    <Compile Include="Services\OrderServices.cs" />
+    <Compile Include="Services\PromotionRuleServices.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Item.cs" />

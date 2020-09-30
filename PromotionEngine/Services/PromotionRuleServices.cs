@@ -1,10 +1,11 @@
 ﻿using PromotionEngine.Helpers;
 using PromotionEngine.Models;
+using PromotionEngine.Services.Interfaces;
 using System.Collections.Generic;
 
-namespace PromotionEngine.Actions
+namespace PromotionEngine.Services
 {
-    public class PromotionRuleServices
+    public class PromotionRuleServices : IPromotionRuleServices
     {
         public List<PromotionRule> GetPromotionRules()
         {

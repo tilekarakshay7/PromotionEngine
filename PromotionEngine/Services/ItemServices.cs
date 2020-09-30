@@ -1,10 +1,11 @@
 ﻿using PromotionEngine.Helpers;
 using PromotionEngine.Models;
+using PromotionEngine.Services.Interfaces;
 using System.Collections.Generic;
 
-namespace PromotionEngine.Actions
+namespace PromotionEngine.Services
 {
-    public class ItemServices
+    public class ItemServices : IItemServices
     {
         //in real case, we fetch this from DB
         public List<Item> GetItems()
