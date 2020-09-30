@@ -29,7 +29,7 @@ namespace PromotionEngine.Test
             //Arrange
             var carts = new List<Cart>()
             {
-                new Cart(){SKUId = Constants.A, TotalCount = 2 }
+                new Cart(Constants.A,  2)
             };
 
             var promotionRule = new PromotionRule
@@ -51,6 +51,37 @@ namespace PromotionEngine.Test
 
             //Assert
             Assert.AreEqual(totalPrice, 100);
+
+        }
+
+        [TestMethod]
+        public void ProcessBill_WhenPromotionRuleIsApplied_Then_CalculateTotalPrice()
+        {
+            //Arrange
+            var carts = new List<Cart>()
+            {
+                new Cart(Constants.A,  3)
+            };
+
+            var promotionRule = new PromotionRule
+            {
+                RuleName = "Rule_A",
+                SKUId = Constants.A,
+                NumberOfApperance = 3,
+                LumsumAmountToReduceFromPrice = 20,
+                PercentageToReduceFromPrice = 0
+            };
+
+            var item = new Item() { SKUId = Constants.A, Name = "A Name", Price = 50 };
+
+            _PromotionRuleServicesMock.Setup(x => x.GetPromotionRulesBySKUId(Constants.A)).Returns(promotionRule);
+            _ItemServicesMock.Setup(x => x.GetItemBySkuId(Constants.A)).Returns(item);
+
+            //Act
+            var totalPrice = OrderServices.ProcessBill(carts);
+
+            //Assert
+            Assert.AreEqual(totalPrice, 130);
 
         }
     }

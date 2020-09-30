@@ -1,3 +1,4 @@
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.csprojAssemblyReference.cache
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -8,8 +9,11 @@ C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Moq.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\nunit.framework.dll
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.pdb
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe.config
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Castle.Core.xml
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
@@ -18,10 +22,6 @@ C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\nunit.framework.xml
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.csprojAssemblyReference.cache
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.csproj.CopyComplete
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.dll
 C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\obj\Debug\PromotionEngine.Test.pdb
-C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe
-C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.pdb
-C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine.Test\bin\Debug\PromotionEngine.exe.config

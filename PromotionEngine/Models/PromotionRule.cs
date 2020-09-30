@@ -4,6 +4,10 @@ namespace PromotionEngine.Models
 {
     public class PromotionRule
     {
+        public PromotionRule()
+        {
+            ListOfAnotherItemsToBeConsidered = new List<char>();
+        }
         public char SKUId { get; set; }
 
         public string RuleName { get; set; }
@@ -14,6 +18,6 @@ namespace PromotionEngine.Models
 
         public int LumsumAmountToReduceFromPrice { get; set; }
 
-        public List<string> ListOfAnotherItemsToBeConsidered { get; set; }
+        public List<char> ListOfAnotherItemsToBeConsidered { get; set; }
     }
 }
