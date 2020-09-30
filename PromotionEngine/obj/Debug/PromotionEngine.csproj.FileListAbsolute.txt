@@ -1,0 +1,6 @@
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\bin\Debug\PromotionEngine.exe.config
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\bin\Debug\PromotionEngine.exe
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\bin\Debug\PromotionEngine.pdb
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\obj\Debug\PromotionEngine.csprojAssemblyReference.cache
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\obj\Debug\PromotionEngine.exe
+C:\Users\tilekaks\OneDrive - Tieto Corporation\Maersk\Challange\PromotionEngine\PromotionEngine\obj\Debug\PromotionEngine.pdb
