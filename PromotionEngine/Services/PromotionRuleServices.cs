@@ -2,6 +2,7 @@
 using PromotionEngine.Models;
 using PromotionEngine.Services.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PromotionEngine.Services
 {
@@ -29,6 +30,11 @@ namespace PromotionEngine.Services
                 },
             };
             return PromotionRules;
+        }
+
+        public PromotionRule GetPromotionRulesBySKUId(char SKUId)
+        {
+            return GetPromotionRules().FirstOrDefault(x => x.SKUId == SKUId);
         }
     }
 }

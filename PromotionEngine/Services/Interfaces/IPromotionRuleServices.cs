@@ -6,5 +6,7 @@ namespace PromotionEngine.Services.Interfaces
     public interface IPromotionRuleServices
     {
         List<PromotionRule> GetPromotionRules();
+        PromotionRule GetPromotionRulesBySKUId(char SKUId);
+
     }
 }

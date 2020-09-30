@@ -6,6 +6,6 @@ namespace PromotionEngine.Services.Interfaces
     public interface IItemServices
     {
         List<Item> GetItems();
-
+        Item GetItemBySkuId(char sKUId);
     }
 }

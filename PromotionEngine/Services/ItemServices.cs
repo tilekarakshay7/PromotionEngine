@@ -2,11 +2,17 @@
 using PromotionEngine.Models;
 using PromotionEngine.Services.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PromotionEngine.Services
 {
     public class ItemServices : IItemServices
     {
+        public Item GetItemBySkuId(char sKUId)
+        {
+            return GetItems().FirstOrDefault(x => x.SKUId == sKUId);
+        }
+
         //in real case, we fetch this from DB
         public List<Item> GetItems()
         {
